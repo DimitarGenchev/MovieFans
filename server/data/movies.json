@@ -1,0 +1,82 @@
+{
+    "718aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "Back to the Future",
+        "genre": "Sci-Fi",
+        "length": "1h 56m",
+        "description": "In the 1980s, an experiment by a weird scientist turns out to be faulty. It leads to his teenaged pal going back in time to the 1950s where he is forced to reunite younger version of his parents.",
+        "imageUrl": "https://pyxis.nymag.com/v1/imgs/83e/7da/cf93b5c5acea63a59c52189b6544f00b62-BTTF-Hugo-Glendinning.2x.rsocial.w600.jpg",
+        "_id": "718aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "837aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "The Shawshank Redemption",
+        "genre": "Drama",
+        "length": "2h 22m",
+        "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
+        "_id": "837aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "948aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "The Godfather",
+        "genre": "Crime",
+        "length": "2h 55m",
+        "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
+        "_id": "948aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "059aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "The Dark Knight",
+        "genre": "Action",
+        "length": "2h 32m",
+        "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg",
+        "_id": "059aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "160aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "Pulp Fiction",
+        "genre": "Crime",
+        "length": "2h 34m",
+        "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/82/Pulp_Fiction_cover.jpg",
+        "_id": "160aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "271aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "Forrest Gump",
+        "genre": "Drama",
+        "length": "2h 22m",
+        "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal, and other historical events unfold from the perspective of an Alabama man with an IQ of 75.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
+        "_id": "271aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "382aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "Inception",
+        "genre": "Sci-Fi",
+        "length": "2h 28m",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7f/Inception_ver3.jpg",
+        "_id": "382aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "493aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "Fight Club",
+        "genre": "Drama",
+        "length": "2h 19m",
+        "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg",
+        "_id": "493aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "504aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "The Matrix",
+        "genre": "Sci-Fi",
+        "length": "2h 16m",
+        "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
+        "_id": "504aebbf-ecad-4066-8e2e-5cd9781a44da"
+    },
+    "615aebbf-ecad-4066-8e2e-5cd9781a44da": {
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "genre": "Fantasy",
+        "length": "2h 58m",
+        "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/87/Ringstrilogyposter.jpg",
+        "_id": "615aebbf-ecad-4066-8e2e-5cd9781a44da"
+    }
+}

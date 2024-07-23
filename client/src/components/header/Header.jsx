@@ -11,7 +11,7 @@ export default function Header() {
                     <Navbar.Brand as={Link} to="/">MovieFans</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/movies">All movies</Nav.Link>
-                        <Nav.Link as={Link} to="#features">Create movie</Nav.Link>
+                        <Nav.Link as={Link} to="/movies/create">Create movie</Nav.Link>
                         <Nav.Link as={Link} to="#pricing">Login</Nav.Link>
                         <Nav.Link as={Link} to="#pricing">Register</Nav.Link>
                         <Nav.Link as={Link} to="#pricing">Logout</Nav.Link>
