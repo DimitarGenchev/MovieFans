@@ -1,10 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MovieCard from './components/MovieCard';
+import Header from './components/header/Header';
+import { Routes, Route } from 'react-router-dom';
+import MoviesList from './components/movies-list/MoviesList';
 
 function App() {
     return (
         <>
-            <MovieCard />
+            <Header />
+
+            <main>
+                <Routes>
+                    <Route path='/movies' element={<MoviesList />} />
+                </Routes>
+            </main>
         </>
     );
 }

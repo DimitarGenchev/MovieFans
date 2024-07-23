@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 function MovieCard() {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card>
       <Card.Img variant="top" src="https://pyxis.nymag.com/v1/imgs/83e/7da/cf93b5c5acea63a59c52189b6544f00b62-BTTF-Hugo-Glendinning.2x.rsocial.w600.jpg" />
       <Card.Body>
         <Card.Title>Back to the Future</Card.Title>
