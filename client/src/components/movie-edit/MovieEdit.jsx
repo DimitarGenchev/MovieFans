@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
 import * as moviesAPI from '../../api/movies-api';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-export default function MovieCreate() {
+export default function MovieEdit() {
     const [formValues, setFormValues] = useState({
         title: '',
         genre: '',
@@ -14,7 +14,23 @@ export default function MovieCreate() {
         imageUrl: '',
     });
 
+    const { movieId } = useParams();
+
     const navigate = useNavigate();
+
+    useEffect(() => {
+        (async () => {
+            const movieResult = await moviesAPI.getOne(movieId);
+
+            setFormValues({
+                title: movieResult.title,
+                genre: movieResult.genre,
+                length: movieResult.length,
+                description: movieResult.description,
+                imageUrl: movieResult.imageUrl,
+            });
+        })();
+    }, []);
 
     const changeHandler = (e) => {
         setFormValues(oldValues => ({
@@ -26,22 +42,14 @@ export default function MovieCreate() {
     const formSubmitHandler = async (e) => {
         e.preventDefault();
 
-        await moviesAPI.create(formValues);
+        await moviesAPI.edit(movieId, { ...formValues, _id: movieId });
 
-        setFormValues({
-            title: '',
-            genre: '',
-            length: '',
-            description: '',
-            imageUrl: '',
-        });
-
-        navigate('/movies');
+        navigate(`/movies/${movieId}/details`);
     }
 
     return (
         <Container style={{ maxWidth: '600px' }}>
-            <h1 className="mb-4">Create movie</h1>
+            <h1 className="mb-4">Edit movie</h1>
 
             <Form onSubmit={formSubmitHandler}>
                 <Form.Group className="mb-3">
@@ -70,7 +78,7 @@ export default function MovieCreate() {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                    Create
+                    Edit
                 </Button>
             </Form>
         </Container>
