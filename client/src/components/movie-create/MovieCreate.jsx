@@ -2,39 +2,25 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
-import * as moviesAPI from '../../api/movies-api';
+import moviesAPI from '../../api/movies-api';
 import { useNavigate } from 'react-router-dom';
+import useForm from '../../hooks/useForm';
 
 export default function MovieCreate() {
-    const [formValues, setFormValues] = useState({
+    const initialValues = {
         title: '',
         genre: '',
         length: '',
         description: '',
         imageUrl: '',
-    });
+    };
 
     const navigate = useNavigate();
 
-    const changeHandler = (e) => {
-        setFormValues(oldValues => ({
-            ...oldValues,
-            [e.target.name]: e.target.value,
-        }));
-    };
+    const [formValues, changeHandler, submitHandler] = useForm(initialValues, submitCallback);
 
-    const formSubmitHandler = async (e) => {
-        e.preventDefault();
-
+    async function submitCallback() {
         await moviesAPI.create(formValues);
-
-        setFormValues({
-            title: '',
-            genre: '',
-            length: '',
-            description: '',
-            imageUrl: '',
-        });
 
         navigate('/movies');
     }
@@ -43,7 +29,7 @@ export default function MovieCreate() {
         <Container style={{ maxWidth: '600px' }}>
             <h1 className="mb-4">Create movie</h1>
 
-            <Form onSubmit={formSubmitHandler}>
+            <Form onSubmit={submitHandler}>
                 <Form.Group className="mb-3">
                     <Form.Label>Movie title</Form.Label>
                     <Form.Control type="text" name="title" value={formValues.title} onChange={changeHandler} />

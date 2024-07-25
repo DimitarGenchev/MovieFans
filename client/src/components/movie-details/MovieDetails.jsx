@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/esm/Container';
 import { Link, useParams } from 'react-router-dom';
-import * as moviesAPI from '../../api/movies-api';
+import moviesAPI from '../../api/movies-api';
 import MovieDelete from '../movie-delete/MovieDelete';
 
 export default function MovieDetails() {

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
-import * as moviesAPI from '../../api/movies-api';
+import moviesAPI from '../../api/movies-api';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export default function MovieEdit() {

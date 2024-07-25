@@ -1,5 +1,5 @@
 import MovieCard from "./movie-card/MovieCard";
-import * as moviesAPI from '../../api/movies-api';
+import moviesAPI from '../../api/movies-api';
 import { useEffect, useState } from "react";
 
 export default function MoviesList() {
@@ -8,7 +8,6 @@ export default function MoviesList() {
     useEffect(() => {
         (async () => {
             const moviesResult = await moviesAPI.getAll();
-            console.log(moviesResult);
 
             setMovies(moviesResult);
         })();
