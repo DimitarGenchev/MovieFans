@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function useForm(initialValues, submitCallback) {
     const [formValues, setFormValues] = useState(initialValues);
-
+    
     const changeHandler = (e) => {
         setFormValues(oldValues => ({
             ...oldValues,
@@ -13,7 +13,7 @@ export default function useForm(initialValues, submitCallback) {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        submitCallback();
+        submitCallback(formValues);
     };
 
     return [

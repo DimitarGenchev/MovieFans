@@ -1,23 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/esm/Container';
 import { Link, useParams } from 'react-router-dom';
-import moviesAPI from '../../api/movies-api';
 import MovieDelete from '../movie-delete/MovieDelete';
+import useGetOneMovie from '../../hooks/movies/useGetOneMovie';
 
 export default function MovieDetails() {
-    const [movie, setMovie] = useState({});
-    const [showDeleteModal, setShowDeleteModal] = useState(false);
     const { movieId } = useParams();
-
-    useEffect(() => {
-        (async () => {
-            const movieResult = await moviesAPI.getOne(movieId);
-
-            setMovie(movieResult);
-        })();
-    }, []);
+    const [movie] = useGetOneMovie(movieId);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     return (
         <Container>

@@ -1,1 +1,3 @@
-# MovieFans
+**MovieFans** is a React app that allows users to view, create, edit and delete different movies. When a users are not authenticated in the app, they are only able to view the movies that other users created. Once a user has created an account, they can start creating, editing and deleting their own movies. Also they are able to leave ratings for movies along with a message.
+
+*App still in progress*

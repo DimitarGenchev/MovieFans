@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
@@ -19,8 +18,8 @@ export default function MovieCreate() {
 
     const [formValues, changeHandler, submitHandler] = useForm(initialValues, submitCallback);
 
-    async function submitCallback() {
-        await moviesAPI.create(formValues);
+    async function submitCallback(values) {
+        await moviesAPI.create(values);
 
         navigate('/movies');
     }
