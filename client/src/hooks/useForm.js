@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function useForm(initialValues, submitCallback) {
     const [formValues, setFormValues] = useState(initialValues);
