@@ -8,7 +8,7 @@ import MovieEdit from './components/movie-edit/MovieEdit';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import { useState } from 'react';
-import { AuthContext } from './contexts/authContext';
+import { AuthContext } from './contexts/AuthContext';
 
 function App() {
     const [authState, setAuthState] = useState({});
@@ -18,6 +18,7 @@ function App() {
     };
 
     const contextData = {
+        userId: authState._id,
         email: authState.email,
         accessToken: authState.accessToken,
         isAuthenticated: !!authState.email,

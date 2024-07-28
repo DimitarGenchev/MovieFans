@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { login } from "../../api/auth-api"
-import { AuthContext } from "../../contexts/authContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const useLogin = () => {
     const { changeAuthState } = useContext(AuthContext);
@@ -9,6 +9,8 @@ const useLogin = () => {
         const result = await login(email, password);
 
         changeAuthState(result);
+
+        return result
     };
 
     return loginHandler;
