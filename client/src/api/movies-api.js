@@ -1,6 +1,6 @@
 import * as requester from './requester';
 
-const BASE_URL = 'http://localhost:3030/jsonstore/movies';
+const BASE_URL = 'http://localhost:3030/data/movies';
 
 const getAll = async () => {
     const moviesResponse = await requester.get(BASE_URL);

@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import moviesAPI from '../../api/movies-api';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
+import useCreateMovie from '../../hooks/movies/useCreateMovie';
 
 export default function MovieCreate() {
     const initialValues = {
@@ -14,14 +15,19 @@ export default function MovieCreate() {
         imageUrl: '',
     };
 
+    const createMovie = useCreateMovie();
     const navigate = useNavigate();
 
     const [formValues, changeHandler, submitHandler] = useForm(initialValues, submitCallback);
 
     async function submitCallback(values) {
-        await moviesAPI.create(values);
+        try {
+            const { _id: movieId } = await createMovie(values);
 
-        navigate('/movies');
+            navigate(`/movies/${movieId}/details`);
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     return (
