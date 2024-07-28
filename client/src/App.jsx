@@ -7,10 +7,25 @@ import MovieDetails from './components/movie-details/MovieDetails';
 import MovieEdit from './components/movie-edit/MovieEdit';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
+import { useState } from 'react';
+import { AuthContext } from './contexts/authContext';
 
 function App() {
+    const [authState, setAuthState] = useState({});
+
+    const changeAuthState = (state) => {
+        setAuthState(state);
+    };
+
+    const contextData = {
+        email: authState.email,
+        accessToken: authState.accessToken,
+        isAuthenticated: !!authState.email,
+        changeAuthState,
+    };
+
     return (
-        <>
+        <AuthContext.Provider value={contextData}>
             <Header />
 
             <main>
@@ -23,7 +38,7 @@ function App() {
                     <Route path='/register' element={<Register />} />
                 </Routes>
             </main>
-        </>
+        </AuthContext.Provider>
     );
 }
 
