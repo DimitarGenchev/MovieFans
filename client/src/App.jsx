@@ -8,6 +8,7 @@ import MovieEdit from './components/movie-edit/MovieEdit';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
 import { AuthContextProvider } from './contexts/AuthContext';
+import Logout from './components/logout/Logout';
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     <Route path='/movies/:movieId/edit' element={<MovieEdit />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
+                    <Route path='/logout' element={<Logout />} />
                 </Routes>
             </main>
         </AuthContextProvider>

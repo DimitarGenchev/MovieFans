@@ -19,7 +19,7 @@ export default function Header() {
                                 <>
                                     <Nav.Link as={Link} to="/movies/create">Create movie</Nav.Link>
                                     <Nav.Link as={Link} to="#pricing">My movies</Nav.Link>
-                                    <Nav.Link as={Link} to="#pricing">Logout</Nav.Link>
+                                    <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
                                 </>
                             )
                             : (
