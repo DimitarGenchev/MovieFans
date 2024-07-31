@@ -4,7 +4,8 @@ const BASE_URL = 'http://localhost:3030/data/reviews';
 
 const getAll = async (movieId) => {
     const params = new URLSearchParams({
-        where: `movieId="${movieId}"`
+        where: `movieId="${movieId}"`,
+        load: 'author=_ownerId:users',
     });
 
     const reviewsResult = await requester.get(`${BASE_URL}?${params.toString()}`);

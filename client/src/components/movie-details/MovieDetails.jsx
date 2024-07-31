@@ -6,11 +6,15 @@ import { Link, useParams } from 'react-router-dom';
 import MovieDelete from '../movie-delete/MovieDelete';
 import useGetOneMovie from '../../hooks/movies/useGetOneMovie';
 import ReviewCreate from '../review-create/ReviewCreate';
+import { useAuthContext } from '../../contexts/AuthContext';
+import MovieReviews from '../movie-reviews/MovieReviews';
 
 export default function MovieDetails() {
     const { movieId } = useParams();
     const [movie] = useGetOneMovie(movieId);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const { userId, isAuthenticated } = useAuthContext();
+    const isOwner = userId === movie._ownerId;
 
     return (
         <>
@@ -23,10 +27,12 @@ export default function MovieDetails() {
                         <Card.Subtitle>{movie.genre}</Card.Subtitle>
                         <Card.Text>{movie.description}</Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                        <Button as={Link} to={`/movies/${movieId}/edit`} variant="success">Edit</Button>
-                        <Button variant="danger" onClick={() => setShowDeleteModal(true)}>Delete</Button>
-                    </Card.Footer>
+                    {isOwner && (
+                        <Card.Footer>
+                            <Button as={Link} to={`/movies/${movieId}/edit`} variant="success">Edit</Button>
+                            <Button variant="danger" onClick={() => setShowDeleteModal(true)}>Delete</Button>
+                        </Card.Footer>
+                    )}
                 </Card>
 
                 <MovieDelete
@@ -35,7 +41,9 @@ export default function MovieDetails() {
                 />
             </Container>
 
-            <ReviewCreate />
+            {isAuthenticated && <ReviewCreate />}
+
+            <MovieReviews />
         </>
     );
 }

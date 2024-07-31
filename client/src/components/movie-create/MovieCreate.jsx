@@ -16,10 +16,7 @@ const initialValues = {
 export default function MovieCreate() {
     const createMovie = useCreateMovie();
     const navigate = useNavigate();
-
-    const [formValues, changeHandler, submitHandler] = useForm(initialValues, submitCallback);
-
-    async function submitCallback(values) {
+    const createMovieHandler = async (values) => {
         try {
             const { _id: movieId } = await createMovie(values);
 
@@ -27,7 +24,9 @@ export default function MovieCreate() {
         } catch (error) {
             console.log(error.message);
         }
-    }
+    };
+
+    const [formValues, changeHandler, submitHandler] = useForm(initialValues, createMovieHandler);
 
     return (
         <Container style={{ maxWidth: '600px' }}>

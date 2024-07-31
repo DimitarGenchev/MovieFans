@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/esm/Button';
 import useForm from '../../hooks/useForm';
 import { useParams } from 'react-router-dom';
 import useCreateReview from '../../hooks/reviews/useCreateReview';
+import { useState } from 'react';
 
 const initialValues = {
     rating: 1,
@@ -13,16 +14,23 @@ const initialValues = {
 export default function ReviewCreate() {
     const { movieId } = useParams();
     const createReview = useCreateReview();
-    const [formValues, changeHandler, submitHandler] = useForm(initialValues, async ({ rating, comment }) => {
+    const [error, setError] = useState();
+    const createReviewHandler = async ({ rating, comment }) => {
+        if (rating < 1 || rating > 5) {
+            return setError('Rating should be between 1 and 5!');
+        }
+
         try {
             await createReview({ movieId, rating: parseInt(rating), comment });
         } catch (error) {
             console.log(error.message);
         }
-    });
+    };
+
+    const [formValues, changeHandler, submitHandler] = useForm(initialValues, createReviewHandler);
 
     return (
-        <Container style={{ maxWidth: '800px' }} className='mb-5'>
+        <Container style={{ maxWidth: '800px' }} className="mb-5">
             <h1 className="mb-4">Leave a review</h1>
 
             <Form onSubmit={submitHandler}>
@@ -39,6 +47,12 @@ export default function ReviewCreate() {
                 <Button variant="primary" type="submit">
                     Add review
                 </Button>
+
+                {error && (
+                    <Form.Group className="mt-3">
+                        <p>{error}</p>
+                    </Form.Group>
+                )}
             </Form>
         </Container>
     );

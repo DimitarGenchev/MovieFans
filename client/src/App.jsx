@@ -9,6 +9,7 @@ import Login from './components/login/Login';
 import Register from './components/register/Register';
 import { AuthContextProvider } from './contexts/AuthContext';
 import Logout from './components/logout/Logout';
+import Home from './components/home/Home';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
 
             <main>
                 <Routes>
+                    <Route path='/' element={<Home />} />
                     <Route path='/movies' element={<MoviesList />} />
                     <Route path='/movies/create' element={<MovieCreate />} />
                     <Route path='/movies/:movieId/details' element={<MovieDetails />} />
