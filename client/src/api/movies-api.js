@@ -3,8 +3,7 @@ import * as requester from './requester';
 const BASE_URL = 'http://localhost:3030/data/movies';
 
 const getAll = async () => {
-    const moviesResponse = await requester.get(BASE_URL);
-    const moviesResult = Object.values(moviesResponse);
+    const moviesResult = await requester.get(BASE_URL);
 
     return moviesResult;
 };

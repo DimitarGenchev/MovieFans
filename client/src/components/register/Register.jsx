@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import { useState } from 'react';
 
-export default function Register() {
-    const initialValues = {
-        email: '',
-        password: '',
-        'confirm-password': '',
-    };
+const initialValues = {
+    email: '',
+    password: '',
+    'confirm-password': '',
+};
 
+export default function Register() {
     const [error, setError] = useState('');
     const register = useRegister();
     const navigate = useNavigate();

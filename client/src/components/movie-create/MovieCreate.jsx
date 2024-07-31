@@ -1,20 +1,19 @@
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
-import moviesAPI from '../../api/movies-api';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import useCreateMovie from '../../hooks/movies/useCreateMovie';
 
-export default function MovieCreate() {
-    const initialValues = {
-        title: '',
-        genre: '',
-        length: '',
-        description: '',
-        imageUrl: '',
-    };
+const initialValues = {
+    title: '',
+    genre: '',
+    length: '',
+    description: '',
+    imageUrl: '',
+};
 
+export default function MovieCreate() {
     const createMovie = useCreateMovie();
     const navigate = useNavigate();
 

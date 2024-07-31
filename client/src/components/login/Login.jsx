@@ -5,12 +5,12 @@ import useForm from '../../hooks/useForm';
 import useLogin from '../../hooks/auth/useLogin';
 import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
-    const initialValues = {
-        email: '',
-        password: '',
-    };
+const initialValues = {
+    email: '',
+    password: '',
+};
 
+export default function Login() {
     const loginHandler = async ({ email, password }) => {
         try {
             await login(email, password);
