@@ -2,6 +2,8 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/esm/Container';
 import Button from 'react-bootstrap/esm/Button';
 import useForm from '../../hooks/useForm';
+import { useParams } from 'react-router-dom';
+import useCreateReview from '../../hooks/reviews/useCreateReview';
 
 const initialValues = {
     rating: 1,
@@ -9,8 +11,16 @@ const initialValues = {
 };
 
 export default function ReviewCreate() {
-    const [formValues, changeHandler, submitHandler] = useForm(initialValues, (values) => console.log(values));
-    
+    const { movieId } = useParams();
+    const createReview = useCreateReview();
+    const [formValues, changeHandler, submitHandler] = useForm(initialValues, async ({ rating, comment }) => {
+        try {
+            await createReview({ movieId, rating: parseInt(rating), comment });
+        } catch (error) {
+            console.log(error.message);
+        }
+    });
+
     return (
         <Container style={{ maxWidth: '800px' }} className='mb-5'>
             <h1 className="mb-4">Leave a review</h1>
