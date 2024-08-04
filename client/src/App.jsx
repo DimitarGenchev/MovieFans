@@ -10,6 +10,8 @@ import Register from './components/register/Register';
 import { AuthContextProvider } from './contexts/AuthContext';
 import Logout from './components/logout/Logout';
 import Home from './components/home/Home';
+import UserGuard from './components/common/UserGuard';
+import OwnerGuard from './components/common/OwnerGuard';
 
 function App() {
     return (
@@ -20,12 +22,16 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/movies' element={<MoviesList />} />
-                    <Route path='/movies/create' element={<MovieCreate />} />
-                    <Route path='/movies/:movieId/details' element={<MovieDetails />} />
-                    <Route path='/movies/:movieId/edit' element={<MovieEdit />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
-                    <Route path='/logout' element={<Logout />} />
+                    <Route path='/movies/:movieId/details' element={<MovieDetails />} />
+                    <Route element={<UserGuard />}>
+                        <Route path='/logout' element={<Logout />} />
+                        <Route path='/movies/create' element={<MovieCreate />} />
+                        <Route element={<OwnerGuard />}>
+                            <Route path='/movies/:movieId/edit' element={<MovieEdit />} />
+                        </Route>
+                    </Route>
                 </Routes>
             </main>
         </AuthContextProvider>
