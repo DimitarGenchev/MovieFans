@@ -7,7 +7,7 @@ import useCreateReview from '../../hooks/reviews/useCreateReview';
 import { useState } from 'react';
 
 const initialValues = {
-    rating: 1,
+    rating: '1',
     comment: '',
 };
 

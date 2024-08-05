@@ -12,7 +12,7 @@ export default function MovieReviews() {
             <h1 className="mb-4">Movie reviews</h1>
 
             {reviews.length > 0
-                ? (reviews.map(review =>(
+                ? (reviews.map(review => (
                     <Card key={review._id} className="mb-4">
                         <Card.Header>{review.author.email}</Card.Header>
                         <Card.Body>

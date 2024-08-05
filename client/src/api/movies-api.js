@@ -1,3 +1,4 @@
+import { useAuthContext } from '../contexts/AuthContext';
 import * as requester from './requester';
 
 const BASE_URL = 'http://localhost:3030/data/movies';
@@ -9,10 +10,20 @@ const getAll = async () => {
 };
 
 const getOne = async (movieId) => {
-    const movieResult = await requester.get(`${BASE_URL}/${movieId}`);
+    const moviesResult = await requester.get(`${BASE_URL}/${movieId}`);
 
-    return movieResult;
+    return moviesResult;
 };
+
+const getPerUser = async (userId) => {
+    const params = new URLSearchParams({
+        where: `_ownerId="${userId}"`,
+    });
+
+    const moviesResult = await requester.get(`${BASE_URL}?${params.toString()}`);
+
+    return moviesResult;
+}
 
 const create = async (data) => {
     return await requester.post(BASE_URL, data);
@@ -29,6 +40,7 @@ const edit = async (movieId, data) => {
 const moviesAPI = {
     getAll,
     getOne,
+    getPerUser,
     create,
     deleteOne,
     edit,

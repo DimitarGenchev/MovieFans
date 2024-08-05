@@ -1,8 +1,8 @@
-import useGetAllMovies from "../../hooks/movies/useGetAllMovies";
+import useGetUserMovies from "../../hooks/movies/useGetUserMovies";
 import MovieCard from "../movie-card/MovieCard";
 
-export default function MoviesList() {
-    const [movies] = useGetAllMovies();
+export default function MyMovies() {
+    const [movies] = useGetUserMovies();
 
     return (
         <div className="row g-4 mx-5">
@@ -12,7 +12,7 @@ export default function MoviesList() {
                         <MovieCard {...movie} />
                     </div>
                 ))
-                : <h1>There are no movies yet!</h1>
+                : <h1>You haven't added any movies yet!</h1>
             }
         </div>
     );

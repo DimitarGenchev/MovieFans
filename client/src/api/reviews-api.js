@@ -19,6 +19,17 @@ const getOne = async (reviewId) => {
     return reviewResult;
 };
 
+const getPerUser = async (userId) => {
+    const params = new URLSearchParams({
+        where: `_ownerId="${userId}"`,
+        load: 'movie=movieId:movies',
+    });
+
+    const reviewsResult = await requester.get(`${BASE_URL}?${params.toString()}`);
+
+    return reviewsResult;
+}
+
 const create = async (data) => {
     return await requester.post(BASE_URL, data);
 };
@@ -34,6 +45,7 @@ const edit = async (reviewId, data) => {
 const reviewsAPI = {
     getAll,
     getOne,
+    getPerUser,
     create,
     deleteOne,
     edit,

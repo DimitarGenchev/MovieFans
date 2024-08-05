@@ -12,6 +12,8 @@ import Logout from './components/logout/Logout';
 import Home from './components/home/Home';
 import UserGuard from './components/common/UserGuard';
 import OwnerGuard from './components/common/OwnerGuard';
+import MyMovies from './components/my-movies/MyMovies';
+import MyReviews from './components/my-reviews/MyReviews';
 
 function App() {
     return (
@@ -28,6 +30,8 @@ function App() {
                     <Route element={<UserGuard />}>
                         <Route path='/logout' element={<Logout />} />
                         <Route path='/movies/create' element={<MovieCreate />} />
+                        <Route path='/my-movies' element={<MyMovies />} />
+                        <Route path='/my-reviews' element={<MyReviews />} />
                         <Route element={<OwnerGuard />}>
                             <Route path='/movies/:movieId/edit' element={<MovieEdit />} />
                         </Route>
@@ -38,4 +42,4 @@ function App() {
     );
 }
 
-export default App
+export default App;
