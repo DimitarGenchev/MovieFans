@@ -8,12 +8,14 @@ import useGetOneMovie from '../../hooks/movies/useGetOneMovie';
 import ReviewCreate from '../review-create/ReviewCreate';
 import { useAuthContext } from '../../contexts/AuthContext';
 import MovieReviews from '../movie-reviews/MovieReviews';
+import useGetAverageRating from '../../hooks/reviews/useGetAverageRating';
 
 export default function MovieDetails() {
     const { movieId } = useParams();
     const [movie] = useGetOneMovie(movieId);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const { userId, isAuthenticated } = useAuthContext();
+    const averageRating = useGetAverageRating(movieId);
     const isOwner = userId === movie._ownerId;
 
     return (
@@ -26,6 +28,7 @@ export default function MovieDetails() {
                         <Card.Title>{movie.title}</Card.Title>
                         <Card.Subtitle>{movie.genre}</Card.Subtitle>
                         <Card.Text>{movie.description}</Card.Text>
+                        <Card.Text>Rating: {averageRating ? averageRating : "This movie hasn't been rated yet"}</Card.Text>
                     </Card.Body>
                     {isOwner && (
                         <Card.Footer>

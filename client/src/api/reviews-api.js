@@ -42,6 +42,17 @@ const edit = async (reviewId, data) => {
     return await requester.put(`${BASE_URL}/${reviewId}`, data);
 };
 
+const getAllRatings = async (movieId) => {
+    const params = new URLSearchParams({
+        where: `movieId="${movieId}"`,
+        select: 'rating',
+    });
+
+    const ratingsResult = await requester.get(`${BASE_URL}?${params.toString()}`);
+
+    return ratingsResult;
+}
+
 const reviewsAPI = {
     getAll,
     getOne,
@@ -49,6 +60,7 @@ const reviewsAPI = {
     create,
     deleteOne,
     edit,
+    getAllRatings,
 };
 
 export default reviewsAPI;

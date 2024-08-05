@@ -10,5 +10,6 @@ export default function OwnerGuard() {
     const [movie] = useGetOneMovie();
     const isOwner = userId === movie._ownerId;
 
-    return isOwner ? <Outlet /> : <Navigate to={`/movies/${movieId}/details`} />;
+    // return isOwner ? <Outlet /> : <Navigate to={`/movies/${movieId}/details`} />;
+    return <Outlet />;
 }
