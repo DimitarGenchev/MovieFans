@@ -16,5 +16,5 @@ export default function useGetAverageRating(movieId) {
     const sum = ratingValues.reduce((accumulator, current) => accumulator + current, 0);
     const average = sum / ratingValues.length;
 
-    return average ? average.toFixed(2) : '';
+    return average ? average.toFixed(1) : '';
 }

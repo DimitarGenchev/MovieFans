@@ -14,6 +14,7 @@ import UserGuard from './components/common/UserGuard';
 import OwnerGuard from './components/common/OwnerGuard';
 import MyMovies from './components/my-movies/MyMovies';
 import MyReviews from './components/my-reviews/MyReviews';
+import GuestGuard from './components/common/GuestGuard';
 
 function App() {
     return (
@@ -24,9 +25,11 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/movies' element={<MoviesList />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/register' element={<Register />} />
                     <Route path='/movies/:movieId/details' element={<MovieDetails />} />
+                    <Route element={<GuestGuard />}>
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/register' element={<Register />} />
+                    </Route>
                     <Route element={<UserGuard />}>
                         <Route path='/logout' element={<Logout />} />
                         <Route path='/movies/create' element={<MovieCreate />} />
