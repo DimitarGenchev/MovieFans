@@ -14,7 +14,7 @@ export default function MovieReviews() {
             {reviews.length > 0
                 ? (reviews.map(review => (
                     <Card key={review._id} className="mb-4">
-                        <Card.Header>{review.author.email}</Card.Header>
+                        <Card.Header>{review.author.username} - {review.author.email}</Card.Header>
                         <Card.Body>
                             <Card.Title>{review.rating}/5</Card.Title>
                             <Card.Text>{review.comment}</Card.Text>

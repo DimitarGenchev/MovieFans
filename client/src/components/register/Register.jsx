@@ -8,6 +8,7 @@ import { useState } from 'react';
 
 const initialValues = {
     email: '',
+    username: '',
     password: '',
     'confirm-password': '',
 };
@@ -23,7 +24,7 @@ export default function Register() {
         }
 
         try {
-            await register(values.email, values.password);
+            await register(values.email, values.username, values.password);
             navigate('/movies');
         } catch (error) {
             setError(error.message);
@@ -40,6 +41,11 @@ export default function Register() {
                 <Form.Group className="mb-3">
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" name="email" value={formValues.email} onChange={changeHandler} />
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="text" name="username" value={formValues.username} onChange={changeHandler} />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
