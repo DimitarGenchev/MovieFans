@@ -11,7 +11,9 @@ const initialValues = {
     comment: '',
 };
 
-export default function ReviewCreate() {
+export default function ReviewCreate({
+    triggerRefetch,
+}) {
     const { movieId } = useParams();
     const createReview = useCreateReview();
     const [error, setError] = useState('');
@@ -22,6 +24,7 @@ export default function ReviewCreate() {
 
         try {
             await createReview({ movieId, rating: parseFloat(rating), comment });
+            triggerRefetch();
             setError('');
         } catch (error) {
             console.log(error.message);

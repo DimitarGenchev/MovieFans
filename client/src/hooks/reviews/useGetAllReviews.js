@@ -1,8 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import reviewsAPI from "../../api/reviews-api";
 
 export default function useGetAllReviews(movieId) {
     const [reviews, setReviews] = useState([]);
+    const [updateFlag, setUpdateFlag] = useState(0);
+
+    const triggerRefetch = () => {
+        setUpdateFlag(value => value + 1);
+    };
 
     useEffect(() => {
         (async () => {
@@ -10,7 +15,7 @@ export default function useGetAllReviews(movieId) {
 
             setReviews(reviewsResult);
         })();
-    }, [movieId]);
+    }, [movieId, updateFlag]);
 
-    return [reviews, setReviews];
+    return [reviews, triggerRefetch, setReviews];
 }

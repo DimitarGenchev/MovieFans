@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/esm/Container';
 import Form from 'react-bootstrap/Form';
 import moviesAPI from '../../api/movies-api';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useAuthContext } from '../../contexts/AuthContext';
 
 export default function MovieEdit() {
     const [formValues, setFormValues] = useState({
@@ -15,12 +16,17 @@ export default function MovieEdit() {
     });
 
     const { movieId } = useParams();
+    const { userId } = useAuthContext();
 
     const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
             const movieResult = await moviesAPI.getOne(movieId);
+
+            if (userId !== movieResult._ownerId) {
+                navigate(`/movies/${movieId}/details`);
+            }
 
             setFormValues({
                 title: movieResult.title,

@@ -1,12 +1,9 @@
 import Container from "react-bootstrap/esm/Container";
 import Card from 'react-bootstrap/Card';
-import useGetAllReviews from "../../hooks/reviews/useGetAllReviews";
-import { useParams } from "react-router-dom";
 
-export default function MovieReviews() {
-    const { movieId } = useParams();
-    const [reviews] = useGetAllReviews(movieId);
-
+export default function MovieReviews({
+    reviews,
+}) {
     return (
         <Container style={{ maxWidth: '800px' }}>
             <h1 className="mb-4">Movie reviews</h1>

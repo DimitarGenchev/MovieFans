@@ -8,14 +8,16 @@ import useGetOneMovie from '../../hooks/movies/useGetOneMovie';
 import ReviewCreate from '../review-create/ReviewCreate';
 import { useAuthContext } from '../../contexts/AuthContext';
 import MovieReviews from '../movie-reviews/MovieReviews';
-import useGetAverageRating from '../../hooks/reviews/useGetAverageRating';
+import useGetAllReviews from '../../hooks/reviews/useGetAllReviews';
+import getAverageRating from '../../utils/getAverageRating';
 
 export default function MovieDetails() {
     const { movieId } = useParams();
     const [movie] = useGetOneMovie(movieId);
+    const [reviews, triggerRefetch] = useGetAllReviews(movieId);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const { userId, isAuthenticated } = useAuthContext();
-    const averageRating = useGetAverageRating(movieId);
+    const averageRating = getAverageRating(reviews);
     const isOwner = userId === movie._ownerId;
 
     return (
@@ -44,9 +46,9 @@ export default function MovieDetails() {
                 />
             </Container>
 
-            {isAuthenticated && <ReviewCreate />}
+            {isAuthenticated && <ReviewCreate triggerRefetch={triggerRefetch} />}
 
-            <MovieReviews />
+            <MovieReviews reviews={reviews} />
         </>
     );
 }

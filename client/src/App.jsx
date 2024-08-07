@@ -11,7 +11,6 @@ import { AuthContextProvider } from './contexts/AuthContext';
 import Logout from './components/logout/Logout';
 import Home from './components/home/Home';
 import UserGuard from './components/common/UserGuard';
-import OwnerGuard from './components/common/OwnerGuard';
 import MyMovies from './components/my-movies/MyMovies';
 import MyReviews from './components/my-reviews/MyReviews';
 import GuestGuard from './components/common/GuestGuard';
@@ -35,9 +34,7 @@ function App() {
                         <Route path='/movies/create' element={<MovieCreate />} />
                         <Route path='/my-movies' element={<MyMovies />} />
                         <Route path='/my-reviews' element={<MyReviews />} />
-                        <Route element={<OwnerGuard />}>
-                            <Route path='/movies/:movieId/edit' element={<MovieEdit />} />
-                        </Route>
+                        <Route path='/movies/:movieId/edit' element={<MovieEdit />} />
                     </Route>
                 </Routes>
             </main>
