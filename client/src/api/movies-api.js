@@ -24,6 +24,14 @@ const getPerUser = async (userId) => {
     return moviesResult;
 }
 
+const getSearch = async (query) => {
+    const params = `where=${query.criteria} LIKE "${query.search}"`;
+    
+    const moviesResult = await requester.get(`${BASE_URL}?${params}`);
+
+    return moviesResult;
+}
+
 const create = async (data) => {
     return await requester.post(BASE_URL, data);
 };
@@ -40,6 +48,7 @@ const moviesAPI = {
     getAll,
     getOne,
     getPerUser,
+    getSearch,
     create,
     deleteOne,
     edit,
