@@ -2,15 +2,22 @@ import { useState } from "react";
 import useGetAllMovies from "../../hooks/movies/useGetAllMovies";
 import MovieCard from "../movie-card/MovieCard";
 import Search from "../search/Search";
-import Paginator from "../pagination/Pagination";
+import Pagination from "../pagination/Pagination";
 
 export default function MoviesList() {
-    const [query, setQuery] = useState({});
-    const [movies] = useGetAllMovies(query);
-
+    const [query, setQuery] = useState({
+        search: '',
+        criteria: '',
+        sort: '',
+        pageSize: 5,
+        offset: 0,
+    });
+    const [movies, totalMoviesCount] = useGetAllMovies(query);
+    const [currentPage, setCurrentPage] = useState(1);
+    
     return (
         <>
-            <Search setQuery={setQuery} />
+            <Search setQuery={setQuery} setCurrentPage={setCurrentPage} />
 
             <div className="row g-4 mx-5">
                 {movies.length > 0
@@ -23,7 +30,13 @@ export default function MoviesList() {
                 }
             </div>
 
-            <Paginator />
+            <Pagination
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                pageSize={query.pageSize}
+                setQuery={setQuery}
+                totalPages={Math.ceil(totalMoviesCount / query.pageSize)}
+            />
         </>
     );
 }

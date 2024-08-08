@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -10,23 +11,34 @@ const initialValues = {
     search: '',
     criteria: '',
     sort: '',
+    pageSize: '5',
 };
 
 export default function Search({
     setQuery,
+    setCurrentPage,
 }) {
     const navigate = useNavigate();
 
-    const searchHandler = ({ search, criteria, sort }) => {
-        const queryParams = new URLSearchParams({ search, criteria, sort }).toString();
+    const searchHandler = ({ search, criteria, sort, pageSize }) => {
+        const queryParams = new URLSearchParams({ search, criteria, sort, pageSize }).toString();
         navigate(`?${queryParams}`, { replace: true });
 
-        if (!search && !criteria && !sort) {
-            setQuery({});
+        if (!search && !criteria && !sort && !pageSize) {
+            setQuery({
+                search: '',
+                criteria: '',
+                sort: '',
+                pageSize: 5,
+                offset: 0,
+            });
+
+            setCurrentPage(1);
         }
 
-        if (criteria || sort) {
-            setQuery({ search, criteria, sort });
+        if (criteria || sort || pageSize) {
+            setQuery(oldState => ({ ...oldState, search, criteria, sort, pageSize: parseInt(pageSize) }));
+            setCurrentPage(1);
         }
     };
 
@@ -49,6 +61,14 @@ export default function Search({
                     <option value="_createdOn">Oldest</option>
                     <option value="title">Title</option>
                 </Form.Select>
+
+                <FloatingLabel label="Page size">
+                    <Form.Select name="pageSize" value={formValues.pageSize} onChange={changeHandler}>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                    </Form.Select>
+                </FloatingLabel>
 
                 <Button type="submit" variant="primary">
                     <FontAwesomeIcon icon={faMagnifyingGlass} />

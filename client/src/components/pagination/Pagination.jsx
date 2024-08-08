@@ -1,25 +1,64 @@
-import Pagination from 'react-bootstrap/Pagination';
+import { useEffect, useState } from 'react';
+import Pag from 'react-bootstrap/Pagination';
 
-export default function Paginator() {
+export default function Pagination({
+    currentPage,
+    setCurrentPage,
+    pageSize,
+    setQuery,
+    totalPages,
+}) {
+    useEffect(() => {
+        const offset = pageSize * (currentPage - 1);
+
+        setQuery(oldState => ({ ...oldState, offset }));
+    }, [currentPage]);
+
+    const changePageClickHandler = (e) => {
+        setCurrentPage(parseInt(e.target.textContent));
+    };
+
+    const items = [];
+
+    for (let index = 1; index <= totalPages; index++) {
+        items.push(
+            <Pag.Item
+                key={index}
+                active={index === currentPage}
+                onClick={changePageClickHandler}
+            >
+                {index}
+            </Pag.Item>
+        );
+    }
+
+    const firstPageClickHandler = () => {
+        setCurrentPage(1);
+    };
+
+    const previousPageClickHandler = () => {
+        setCurrentPage(page => Math.max(page - 1, 1));
+    };
+
+    const nextPageClickHandler = () => {
+        setCurrentPage(page => Math.min(page + 1, totalPages));
+    };
+
+    const lastPageClickHandler = () => {
+        setCurrentPage(totalPages);
+    };
+
     return (
         <div className="d-flex justify-content-center mt-5">
-            <Pagination>
-                <Pagination.First />
-                <Pagination.Prev />
-                <Pagination.Item>{1}</Pagination.Item>
-                <Pagination.Ellipsis />
+            <Pag size="lg">
+                <Pag.First onClick={firstPageClickHandler} />
+                <Pag.Prev onClick={previousPageClickHandler} />
 
-                <Pagination.Item>{10}</Pagination.Item>
-                <Pagination.Item>{11}</Pagination.Item>
-                <Pagination.Item>{12}</Pagination.Item>
-                <Pagination.Item>{13}</Pagination.Item>
-                <Pagination.Item>{14}</Pagination.Item>
+                {items}
 
-                <Pagination.Ellipsis />
-                <Pagination.Item>{20}</Pagination.Item>
-                <Pagination.Next />
-                <Pagination.Last />
-            </Pagination>
+                <Pag.Next onClick={nextPageClickHandler} />
+                <Pag.Last onClick={lastPageClickHandler} />
+            </Pag>
         </div>
     );
 }

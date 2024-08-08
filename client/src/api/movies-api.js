@@ -38,10 +38,36 @@ const getSearch = async (query) => {
 
         params += `sortBy=${query.sort}`;
     }
+
+    if (query.pageSize) {
+        if (params) {
+            params += '&';
+        }
+
+        if (query.offset) {
+            params += `offset=${query.offset}&`;
+        }
+
+        params += `pageSize=${query.pageSize}`;
+    }
     
     const moviesResult = await requester.get(`${BASE_URL}?${params}`);
 
     return moviesResult;
+}
+
+const getCount = async (query) => {
+    let params = '';
+
+    if (query.criteria) {
+        params += `where=${query.criteria} LIKE "${query.search}"&`;
+    }
+
+    params += 'count';
+
+    const moviesCount = await requester.get(`${BASE_URL}?${params}`);
+
+    return moviesCount;
 }
 
 const create = async (data) => {
@@ -61,6 +87,7 @@ const moviesAPI = {
     getOne,
     getPerUser,
     getSearch,
+    getCount,
     create,
     deleteOne,
     edit,

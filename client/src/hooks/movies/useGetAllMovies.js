@@ -3,20 +3,17 @@ import { useEffect, useState } from "react";
 
 export default function useGetAllMovies(query) {
     const [movies, setMovies] = useState([]);
+    const [totalMoviesCount, setTotalMoviesCount] = useState(0);
 
     useEffect(() => {
         (async () => {
-            let moviesResult;
-
-            if (query.criteria || query.sort) {
-                moviesResult = await moviesAPI.getSearch(query);
-            } else {
-                moviesResult = await moviesAPI.getAll();
-            }
+            const moviesResult = await moviesAPI.getSearch(query);
+            const countResult = await moviesAPI.getCount({ search: query.search, criteria: query.criteria });
 
             setMovies(moviesResult);
+            setTotalMoviesCount(countResult);
         })();
     }, [query]);
 
-    return [movies, setMovies];
+    return [movies, totalMoviesCount, setMovies];
 }

@@ -1439,6 +1439,106 @@
                 "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/87/Ringstrilogyposter.jpg",
                 "_createdOn": 1722186292079,
                 "_id": "a63c6df7-3dcd-4923-93d9-55bf080a3da4"
+            },
+            "2613e05e-c1be-48bf-af1e-40037f60bdd1": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Titanic",
+                "genre": "Romance",
+                "length": "3h 14m",
+                "description": "A young aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/22/Titanic_poster.jpg",
+                "_createdOn": 1723157654835,
+                "_id": "2613e05e-c1be-48bf-af1e-40037f60bdd1"
+            },
+            "f1c0d8c4-d32d-4317-8f6c-c56fe410ce58": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Saving Private Ryan",
+                "genre": "War",
+                "length": "2h 49m",
+                "description": "During World War II, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg",
+                "_createdOn": 1723157663672,
+                "_id": "f1c0d8c4-d32d-4317-8f6c-c56fe410ce58"
+            },
+            "524a68df-4d44-4ff2-84a5-265d24a3a9c8": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Schindler's List",
+                "genre": "Drama",
+                "length": "3h 15m",
+                "description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/38/Schindler%27s_List_movie.jpg",
+                "_createdOn": 1723157673411,
+                "_id": "524a68df-4d44-4ff2-84a5-265d24a3a9c8"
+            },
+            "e85f3bd2-cd5f-4dd9-938b-11c381a17d04": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Braveheart",
+                "genre": "History",
+                "length": "2h 58m",
+                "description": "Scottish warrior William Wallace leads his countrymen in a rebellion to free his homeland from the tyranny of King Edward I of England.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/5/55/Braveheart_imp.jpg",
+                "_createdOn": 1723157682022,
+                "_id": "e85f3bd2-cd5f-4dd9-938b-11c381a17d04"
+            },
+            "91397588-922c-4059-8183-5fa358dbfad9": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "The Silence of the Lambs",
+                "genre": "Thriller",
+                "length": "1h 58m",
+                "description": "A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer to catch another serial killer, a madman who skins his victims.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg",
+                "_createdOn": 1723157686955,
+                "_id": "91397588-922c-4059-8183-5fa358dbfad9"
+            },
+            "47ba4068-abf7-421e-8618-1db53d9decf8": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Goodfellas",
+                "genre": "Crime",
+                "length": "2h 26m",
+                "description": "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7b/Goodfellas.jpg",
+                "_createdOn": 1723157691974,
+                "_id": "47ba4068-abf7-421e-8618-1db53d9decf8"
+            },
+            "442289a3-c134-4f17-ad13-be516afb240d": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Star Wars: Episode IV - A New Hope",
+                "genre": "Sci-Fi",
+                "length": "2h 1m",
+                "description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee, and two droids to save the galaxy from the Empire's world-destroying battle station.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg",
+                "_createdOn": 1723157697378,
+                "_id": "442289a3-c134-4f17-ad13-be516afb240d"
+            },
+            "c82220e0-09db-44d9-9817-2955da027c6c": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "The Lion King",
+                "genre": "Animation",
+                "length": "1h 28m",
+                "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3d/The_Lion_King_poster.jpg",
+                "_createdOn": 1723157703129,
+                "_id": "c82220e0-09db-44d9-9817-2955da027c6c"
+            },
+            "ddef121b-6fca-45dc-aa38-ecac3cdbae8f": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Alien",
+                "genre": "Horror",
+                "length": "1h 57m",
+                "description": "The crew of a commercial spacecraft encounters a deadly alien lifeform after investigating an unknown transmission.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Alien_movie_poster.jpg",
+                "_createdOn": 1723157708471,
+                "_id": "ddef121b-6fca-45dc-aa38-ecac3cdbae8f"
+            },
+            "aa64fc4d-a6d4-4128-b30d-2fb824945f30": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Casablanca",
+                "genre": "Romance",
+                "length": "1h 42m",
+                "description": "A cynical expatriate American café owner struggles to decide whether or not to help his former lover and her fugitive husband escape from French Morocco.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/CasablancaPoster-Gold.jpg",
+                "_createdOn": 1723157716640,
+                "_id": "aa64fc4d-a6d4-4128-b30d-2fb824945f30"
             }
     	},
     	reviews: {
