@@ -2,6 +2,7 @@ import { useState } from "react";
 import useGetAllMovies from "../../hooks/movies/useGetAllMovies";
 import MovieCard from "../movie-card/MovieCard";
 import Search from "../search/Search";
+import Paginator from "../pagination/Pagination";
 
 export default function MoviesList() {
     const [query, setQuery] = useState({});
@@ -21,6 +22,8 @@ export default function MoviesList() {
                     : <h1>There are no movies yet!</h1>
                 }
             </div>
+
+            <Paginator />
         </>
     );
 }

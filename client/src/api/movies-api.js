@@ -25,7 +25,19 @@ const getPerUser = async (userId) => {
 }
 
 const getSearch = async (query) => {
-    const params = `where=${query.criteria} LIKE "${query.search}"`;
+    let params = '';
+
+    if (query.criteria) {
+        params += `where=${query.criteria} LIKE "${query.search}"`;
+    }
+
+    if (query.sort) {
+        if (params) {
+            params += '&';
+        }
+
+        params += `sortBy=${query.sort}`;
+    }
     
     const moviesResult = await requester.get(`${BASE_URL}?${params}`);
 

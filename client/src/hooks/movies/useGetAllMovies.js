@@ -8,7 +8,7 @@ export default function useGetAllMovies(query) {
         (async () => {
             let moviesResult;
 
-            if (query.criteria) {
+            if (query.criteria || query.sort) {
                 moviesResult = await moviesAPI.getSearch(query);
             } else {
                 moviesResult = await moviesAPI.getAll();
