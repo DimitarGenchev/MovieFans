@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function MovieCard({
     title,
-    description,
+    genre,
     imageUrl,
     _id,
 }) {
@@ -13,7 +13,7 @@ export default function MovieCard({
             <Card.Img variant="top" src={imageUrl} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
-                <Card.Text>{description}</Card.Text>
+                <Card.Text>{genre}</Card.Text>
                 <Button as={Link} to={`/movies/${_id}/details`} variant="primary">Details</Button>
             </Card.Body>
         </Card>

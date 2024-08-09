@@ -5,6 +5,7 @@ import useForm from '../../hooks/useForm';
 import { useParams } from 'react-router-dom';
 import useCreateReview from '../../hooks/reviews/useCreateReview';
 import { useState } from 'react';
+import styles from './ReviewCreate.module.css';
 
 const initialValues = {
     rating: '1',
@@ -54,7 +55,7 @@ export default function ReviewCreate({
 
                 {error && (
                     <Form.Group className="mt-3">
-                        <p>{error}</p>
+                        <p className={styles.error}>{error}</p>
                     </Form.Group>
                 )}
             </Form>
