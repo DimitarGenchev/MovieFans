@@ -1346,7 +1346,7 @@
                 "genre": "Sci-Fi",
                 "length": "1h 56m",
                 "description": "In the 1980s, an experiment by a weird scientist turns out to be faulty. It leads to his teenaged pal going back in time to the 1950s where he is forced to reunite younger version of his parents.",
-                "imageUrl": "https://pyxis.nymag.com/v1/imgs/83e/7da/cf93b5c5acea63a59c52189b6544f00b62-BTTF-Hugo-Glendinning.2x.rsocial.w600.jpg",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg",
                 "_createdOn": 1722186116780,
                 "_id": "c1545c86-1cd1-490a-9ba4-2307317b1fc8"
             },
@@ -1376,7 +1376,7 @@
                 "genre": "Action",
                 "length": "2h 32m",
                 "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
-                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg",
                 "_createdOn": 1722186215360,
                 "_id": "a74c62e8-bd9c-4651-b969-f577aa8ff5b7"
             },
@@ -1386,7 +1386,7 @@
                 "genre": "Crime",
                 "length": "2h 34m",
                 "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/82/Pulp_Fiction_cover.jpg",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg",
                 "_createdOn": 1722186227347,
                 "_id": "b19acc43-53d2-4db2-81cf-e4f6ea0285c6"
             },
@@ -1406,7 +1406,7 @@
                 "genre": "Sci-Fi",
                 "length": "2h 28m",
                 "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
-                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/7/7f/Inception_ver3.jpg",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
                 "_createdOn": 1722186251251,
                 "_id": "c595ff4c-7981-406f-8ac6-70e6105d60ef"
             },
@@ -1436,7 +1436,7 @@
                 "genre": "Fantasy",
                 "length": "2h 58m",
                 "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
-                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/87/Ringstrilogyposter.jpg",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fb/Lord_Rings_Fellowship_Ring.jpg",
                 "_createdOn": 1722186292079,
                 "_id": "a63c6df7-3dcd-4923-93d9-55bf080a3da4"
             },
@@ -1446,7 +1446,7 @@
                 "genre": "Romance",
                 "length": "3h 14m",
                 "description": "A young aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
-                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/22/Titanic_poster.jpg",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/18/Titanic_%281997_film%29_poster.png",
                 "_createdOn": 1723157654835,
                 "_id": "2613e05e-c1be-48bf-af1e-40037f60bdd1"
             },
@@ -1536,7 +1536,7 @@
                 "genre": "Romance",
                 "length": "1h 42m",
                 "description": "A cynical expatriate American café owner struggles to decide whether or not to help his former lover and her fugitive husband escape from French Morocco.",
-                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/CasablancaPoster-Gold.jpg",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/CasablancaPoster-Gold.jpg/330px-CasablancaPoster-Gold.jpg",
                 "_createdOn": 1723157716640,
                 "_id": "aa64fc4d-a6d4-4128-b30d-2fb824945f30"
             }

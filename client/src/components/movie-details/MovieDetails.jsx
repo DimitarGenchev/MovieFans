@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/esm/Container';
+import Image from 'react-bootstrap/Image';
 import { Link, useParams } from 'react-router-dom';
 import MovieDelete from '../movie-delete/MovieDelete';
 import useGetOneMovie from '../../hooks/movies/useGetOneMovie';
@@ -24,13 +25,13 @@ export default function MovieDetails() {
 
     return (
         <>
-            <Container className="mb-5">
+            <Container className="mb-5 d-flex">
+                <Image src={movie.imageUrl} he />
                 <Card>
-                    <Card.Img variant="top" src={movie.imageUrl} />
-                    <Card.Header>{movie.length}</Card.Header>
+                    <Card.Header className="fs-4 fw-bold">{movie.title}</Card.Header>
                     <Card.Body>
-                        <Card.Title>{movie.title}</Card.Title>
-                        <Card.Subtitle>{movie.genre}</Card.Subtitle>
+                        <Card.Title className="mb-3">{movie.genre}</Card.Title>
+                        <Card.Subtitle className="mb-3">{movie.length}</Card.Subtitle>
                         <Card.Text>{movie.description}</Card.Text>
                         <Card.Text>
                             Rating: {averageRating
