@@ -6,7 +6,6 @@ import { useRegister } from '../../hooks/auth/useRegister';
 import { useNavigate } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import { useState } from 'react';
-import styles from './Register.module.css';
 
 const initialValues = {
     email: '',
@@ -68,7 +67,7 @@ export default function Register() {
 
                 {error && (
                     <Form.Group className="mt-3">
-                        <p className={styles.error}>{error}</p>
+                        <p className="text-danger fw-bold fs-5">{error}</p>
                     </Form.Group>
                 )}
             </Form>

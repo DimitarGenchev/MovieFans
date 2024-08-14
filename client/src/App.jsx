@@ -14,6 +14,7 @@ import UserGuard from './components/common/UserGuard';
 import MyMovies from './components/my-movies/MyMovies';
 import MyReviews from './components/my-reviews/MyReviews';
 import GuestGuard from './components/common/GuestGuard';
+import ReviewEdit from './components/review-edit/ReviewEdit';
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                         <Route path='/my-movies' element={<MyMovies />} />
                         <Route path='/my-reviews' element={<MyReviews />} />
                         <Route path='/movies/:movieId/edit' element={<MovieEdit />} />
+                        <Route path='/reviews/:reviewId/edit' element={<ReviewEdit />} />
                     </Route>
                 </Routes>
             </main>

@@ -6,7 +6,6 @@ import useForm from '../../hooks/useForm';
 import useCreateMovie from '../../hooks/movies/useCreateMovie';
 import FloatingLabel from 'react-bootstrap/esm/FloatingLabel';
 import { useState } from 'react';
-import styles from './MovieCreate.module.css';
 
 const initialValues = {
     title: '',
@@ -69,7 +68,7 @@ export default function MovieCreate() {
 
                 {error && (
                     <Form.Group className="mt-3">
-                        <p className={styles.error}>{error}</p>
+                        <p className="text-danger fw-bold fs-5">{error}</p>
                     </Form.Group>
                 )}
             </Form>

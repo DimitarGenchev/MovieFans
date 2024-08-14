@@ -6,7 +6,6 @@ import useForm from '../../hooks/useForm';
 import useLogin from '../../hooks/auth/useLogin';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import styles from './Login.module.css';
 
 const initialValues = {
     email: '',
@@ -55,7 +54,7 @@ export default function Login() {
 
                 {error && (
                     <Form.Group className="mt-3">
-                        <p className={styles.error}>{error}</p>
+                        <p className="text-danger fw-bold fs-5">{error}</p>
                     </Form.Group>
                 )}
             </Form>

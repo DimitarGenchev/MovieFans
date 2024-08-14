@@ -26,7 +26,7 @@ export default function MovieDetails() {
     return (
         <>
             <Container className="mb-5 d-flex">
-                <Image src={movie.imageUrl} he />
+                <Image src={movie.imageUrl} />
                 <Card>
                     <Card.Header className="fs-4 fw-bold">{movie.title}</Card.Header>
                     <Card.Body>

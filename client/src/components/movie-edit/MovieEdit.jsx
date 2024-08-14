@@ -6,7 +6,6 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import moviesAPI from '../../api/movies-api';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
-import styles from './MovieEdit.module.css';
 
 export default function MovieEdit() {
     const [formValues, setFormValues] = useState({
@@ -96,7 +95,7 @@ export default function MovieEdit() {
 
                 {error && (
                     <Form.Group className="mt-3">
-                        <p className={styles.error}>{error}</p>
+                        <p className="text-danger fw-bold fs-5">{error}</p>
                     </Form.Group>
                 )}
             </Form>
