@@ -19,21 +19,19 @@ export default function MovieDelete({
     }
 
     return (
-        <>
-            <Modal show={showModal} onHide={closeModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Delete movie</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Are you sure you want to delete this movie?</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={closeModal}>
-                        Close
-                    </Button>
-                    <Button variant="danger" onClick={deleteMovieHandler}>
-                        Delete
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-        </>
+        <Modal show={showModal} onHide={closeModal}>
+            <Modal.Header closeButton>
+                <Modal.Title>Delete movie</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Are you sure you want to delete this movie?</Modal.Body>
+            <Modal.Footer>
+                <Button variant="primary" onClick={closeModal}>
+                    Close
+                </Button>
+                <Button variant="danger" onClick={deleteMovieHandler}>
+                    Delete
+                </Button>
+            </Modal.Footer>
+        </Modal>
     );
 }

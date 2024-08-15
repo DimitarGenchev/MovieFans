@@ -4,11 +4,15 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useAuthContext } from "../../contexts/AuthContext";
+import ReviewDelete from "../review-delete/ReviewDelete";
+import { useState } from "react";
 
 export default function MovieReviews({
     reviews,
+    triggerRefetch,
 }) {
     const { userId } = useAuthContext();
+    const [deleteReviewId, setDeleteReviewId] = useState(null);
 
     return (
         <Container style={{ maxWidth: '800px' }}>
@@ -22,15 +26,23 @@ export default function MovieReviews({
                                 {review.author.username} - {review.author.email}
                             </span>
                             {userId === review._ownerId && (
-                                <Dropdown className="ms-auto">
-                                    <Dropdown.Toggle>
-                                    </Dropdown.Toggle>
+                                <>
+                                    <Dropdown className="ms-auto">
+                                        <Dropdown.Toggle variant="secondary"/>
 
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href={`/reviews/${review._id}/edit`}>Edit</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">Delete</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
+                                        <Dropdown.Menu>
+                                            <Dropdown.Item href={`/reviews/${review._id}/edit`}>Edit</Dropdown.Item>
+                                            <Dropdown.Item onClick={() => setDeleteReviewId(review._id)}>Delete</Dropdown.Item>
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+
+                                    <ReviewDelete
+                                        showModal={deleteReviewId === review._id}
+                                        closeModal={() => setDeleteReviewId(null)}
+                                        reviewId={review._id}
+                                        triggerRefetch={triggerRefetch}
+                                    />
+                                </>
                             )}
                         </Card.Header>
                         <Card.Body>

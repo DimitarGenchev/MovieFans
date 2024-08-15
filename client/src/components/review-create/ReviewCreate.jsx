@@ -18,7 +18,7 @@ export default function ReviewCreate({
     const createReview = useCreateReview();
     const [error, setError] = useState('');
     const createReviewHandler = async ({ rating, comment }) => {
-        if (rating < 1 || rating > 5) {
+        if (parseFloat(rating) < 1 || parseFloat(rating) > 5) {
             return setError('Rating should be between 1 and 5!');
         }
 

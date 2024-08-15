@@ -50,7 +50,7 @@ export default function ReviewEdit() {
             return setError('Rating cannot be empty!');
         }
 
-        if (formValues.rating < 1 || formValues.rating > 5) {
+        if (parseFloat(formValues.rating) < 1 || parseFloat(formValues.rating) > 5) {
             return setError('Rating should be between 1 and 5!');
         }
 
@@ -76,13 +76,15 @@ export default function ReviewEdit() {
             <h1 className="mb-4">Edit review</h1>
 
             <Form onSubmit={formSubmitHandler}>
-                <FloatingLabel className="mb-3" label="Rating">
+                <Form.Group className="mb-3">
+                    <Form.Label>Rating</Form.Label>
                     <Form.Control type="number" name="rating" value={formValues.rating} onChange={changeHandler} />
-                </FloatingLabel>
+                </Form.Group>
 
-                <FloatingLabel className="mb-3" label="Comment">
+                <Form.Group className="mb-3">
+                    <Form.Label>Comment</Form.Label>
                     <Form.Control as="textarea" rows="5" name="comment" value={formValues.comment} onChange={changeHandler} />
-                </FloatingLabel>
+                </Form.Group>
 
                 <Button variant="primary" type="submit">
                     Edit

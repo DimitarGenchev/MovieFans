@@ -61,7 +61,10 @@ export default function MovieDetails() {
 
             {isAuthenticated && <ReviewCreate triggerRefetch={triggerRefetch} />}
 
-            <MovieReviews reviews={reviews} />
+            <MovieReviews
+                reviews={reviews}
+                triggerRefetch={triggerRefetch}
+            />
         </>
     );
 }
