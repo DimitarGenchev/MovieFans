@@ -28,7 +28,7 @@ export default function MovieReviews({
                             {userId === review._ownerId && (
                                 <>
                                     <Dropdown className="ms-auto">
-                                        <Dropdown.Toggle variant="secondary"/>
+                                        <Dropdown.Toggle variant="secondary" />
 
                                         <Dropdown.Menu>
                                             <Dropdown.Item href={`/reviews/${review._id}/edit`}>Edit</Dropdown.Item>

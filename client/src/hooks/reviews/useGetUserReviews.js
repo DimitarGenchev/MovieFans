@@ -5,6 +5,11 @@ import { useAuthContext } from "../../contexts/AuthContext";
 export default function useGetUserReviews() {
     const { userId } = useAuthContext();
     const [reviews, setReviews] = useState([]);
+    const [updateFlag, setUpdateFlag] = useState(0);
+
+    const triggerRefetch = () => {
+        setUpdateFlag(value => value + 1);
+    };
 
     useEffect(() => {
         (async () => {
@@ -12,7 +17,7 @@ export default function useGetUserReviews() {
 
             setReviews(reviewsResult);
         })();
-    }, []);
+    }, [updateFlag]);
 
-    return [reviews, setReviews];
+    return [reviews, triggerRefetch, setReviews];
 }
