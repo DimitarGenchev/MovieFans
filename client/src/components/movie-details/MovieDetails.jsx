@@ -59,7 +59,7 @@ export default function MovieDetails() {
                 />
             </Container>
 
-            {isAuthenticated && <ReviewCreate triggerRefetch={triggerRefetch} />}
+            {isAuthenticated && <ReviewCreate triggerRefetch={triggerRefetch} reviews={reviews} />}
 
             <MovieReviews
                 reviews={reviews}

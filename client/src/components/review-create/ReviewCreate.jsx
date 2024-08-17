@@ -5,6 +5,7 @@ import useForm from '../../hooks/useForm';
 import { useParams } from 'react-router-dom';
 import useCreateReview from '../../hooks/reviews/useCreateReview';
 import { useState } from 'react';
+import { useAuthContext } from '../../contexts/AuthContext';
 
 const initialValues = {
     rating: '1',
@@ -13,11 +14,20 @@ const initialValues = {
 
 export default function ReviewCreate({
     triggerRefetch,
+    reviews,
 }) {
     const { movieId } = useParams();
+    const { userId } = useAuthContext();
     const createReview = useCreateReview();
     const [error, setError] = useState('');
+
     const createReviewHandler = async ({ rating, comment }) => {
+        for (const review of reviews) {
+            if (review._ownerId === userId) {
+                return setError('You have already reviewed this movie!');
+            }
+        }
+
         if (parseFloat(rating) < 1 || parseFloat(rating) > 5) {
             return setError('Rating should be between 1 and 5!');
         }
