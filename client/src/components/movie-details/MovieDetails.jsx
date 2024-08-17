@@ -25,7 +25,7 @@ export default function MovieDetails() {
 
     return (
         <>
-            <Container className="mb-5 d-flex">
+            <Container style={{maxWidth: "1250px"}} className="mb-5 d-flex">
                 <Image src={movie.imageUrl} />
                 <Card>
                     <Card.Header className="fs-4 fw-bold">{movie.title}</Card.Header>
@@ -44,6 +44,7 @@ export default function MovieDetails() {
                                     "This movie hasn't been rated yet"
                                 )}
                         </Card.Text>
+                        <Card.Text>Added by: {movie.owner?.username}</Card.Text>
                     </Card.Body>
                     {isOwner && (
                         <Card.Footer>

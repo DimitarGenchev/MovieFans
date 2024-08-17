@@ -1550,14 +1550,6 @@
                 "_createdOn": 1722372863596,
                 "_id": "679d9a4d-4a9e-4e26-964a-912c59f71958"
             },
-            "be5609bf-8c1c-4e5a-9dce-9033f7952c86": {
-                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "movieId": "c1545c86-1cd1-490a-9ba4-2307317b1fc8",
-                "rating": 4.9,
-                "comment": "Great movie!",
-                "_createdOn": 1722377377469,
-                "_id": "be5609bf-8c1c-4e5a-9dce-9033f7952c86"
-            },
             "3b227bc4-a550-44de-8baa-f6e2f259c9ca": {
                 "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 "movieId": "1b1767e2-c22e-4bfb-93dd-647c386b5294",

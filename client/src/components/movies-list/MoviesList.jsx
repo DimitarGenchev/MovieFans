@@ -19,11 +19,11 @@ export default function MoviesList() {
         <>
             <Search setQuery={setQuery} setCurrentPage={setCurrentPage} />
 
-            <div className="row g-4 mx-5">
+            <div className="row g-4 mx-5 d-flex align-items-stretch">
                 {movies.length > 0
                     ? movies.map(movie => (
-                        <div key={movie._id} className="col-lg-2 col-md-4 col-sm-6">
-                            <MovieCard {...movie} />
+                        <div key={movie._id} className="col-lg-2 col-md-4 col-sm-5 d-flex">
+                            <MovieCard {...movie} className="flex-grow-1" />
                         </div>
                     ))
                     : <h1>There are no movies yet!</h1>

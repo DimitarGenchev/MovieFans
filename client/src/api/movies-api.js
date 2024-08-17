@@ -9,7 +9,11 @@ const getAll = async () => {
 };
 
 const getOne = async (movieId) => {
-    const moviesResult = await requester.get(`${BASE_URL}/${movieId}`);
+    const params = new URLSearchParams({
+        load: 'owner=_ownerId:users',
+    });
+
+    const moviesResult = await requester.get(`${BASE_URL}/${movieId}?${params.toString()}`);
 
     return moviesResult;
 };
