@@ -9,7 +9,7 @@ export default function MoviesList() {
         search: '',
         criteria: '',
         sort: '',
-        pageSize: 5,
+        pageSize: 6,
         offset: 0,
     });
     const [movies, totalMoviesCount] = useGetAllMovies(query);
@@ -19,7 +19,7 @@ export default function MoviesList() {
         <>
             <Search setQuery={setQuery} setCurrentPage={setCurrentPage} />
 
-            <div className="row g-4 mx-5 d-flex align-items-stretch">
+            <div className="row g-4 mx-5 align-items-stretch">
                 {movies.length > 0
                     ? movies.map(movie => (
                         <div key={movie._id} className="col-lg-2 col-md-4 col-sm-5 d-flex">

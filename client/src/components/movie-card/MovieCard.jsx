@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import styles from './MovieCard.module.css';
 
 export default function MovieCard({
     title,
@@ -9,7 +10,7 @@ export default function MovieCard({
     _id,
 }) {
     return (
-        <Card>
+        <Card className={styles['card-width']}>
             <Card.Img variant="top" src={imageUrl} height="440px" />
             <Card.Body className="d-flex flex-column">
                 <Card.Title>{title}</Card.Title>

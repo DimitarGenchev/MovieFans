@@ -82,7 +82,7 @@ export default function MovieEdit() {
                 </FloatingLabel>
 
                 <FloatingLabel className="mb-3" label="Description">
-                    <Form.Control type="text" name="description" value={formValues.description} onChange={changeHandler} />
+                    <Form.Control as="textarea" style={{height: 'auto'}} rows="10" maxLength="500" name="description" value={formValues.description} onChange={changeHandler} />
                 </FloatingLabel>
 
                 <FloatingLabel className="mb-3" label="Image URL">

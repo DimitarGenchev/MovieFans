@@ -55,7 +55,7 @@ export default function MovieCreate() {
                 </FloatingLabel>
 
                 <FloatingLabel className="mb-3" label="Description">
-                    <Form.Control type="text" placeholder="" name="description" value={formValues.description} onChange={changeHandler} />
+                    <Form.Control as="textarea" style={{height: 'auto'}} rows="10" maxLength="500" placeholder="" name="description" value={formValues.description} onChange={changeHandler} />
                 </FloatingLabel>
 
                 <FloatingLabel className="mb-3" label="Image URL">

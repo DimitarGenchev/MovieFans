@@ -47,7 +47,7 @@ export default function ReviewCreate({
         <Container style={{ maxWidth: '800px' }} className="mb-5">
             <h1 className="mb-4">Leave a review</h1>
 
-            <Form onSubmit={submitHandler} noValidate>
+            <Form onSubmit={submitHandler}>
                 <Form.Group className="mb-3">
                     <Form.Label>Rating</Form.Label>
                     <Form.Control type="number" name="rating" value={formValues.rating} onChange={changeHandler} />
@@ -55,7 +55,7 @@ export default function ReviewCreate({
 
                 <Form.Group className="mb-3">
                     <Form.Label>Comment</Form.Label>
-                    <Form.Control as="textarea" rows="5" name="comment" value={formValues.comment} onChange={changeHandler} />
+                    <Form.Control as="textarea" rows="10" maxLength="500" name="comment" value={formValues.comment} onChange={changeHandler} />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">

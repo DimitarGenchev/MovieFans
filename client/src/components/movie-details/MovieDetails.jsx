@@ -25,9 +25,9 @@ export default function MovieDetails() {
 
     return (
         <>
-            <Container style={{maxWidth: "1250px"}} className="mb-5 d-flex">
+            <Container className="mb-5 d-flex">
                 <Image src={movie.imageUrl} />
-                <Card>
+                <Card style={{width: "1000px"}}>
                     <Card.Header className="fs-4 fw-bold">{movie.title}</Card.Header>
                     <Card.Body>
                         <Card.Title className="mb-3">{movie.genre}</Card.Title>

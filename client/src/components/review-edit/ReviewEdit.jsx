@@ -83,7 +83,7 @@ export default function ReviewEdit() {
 
                 <Form.Group className="mb-3">
                     <Form.Label>Comment</Form.Label>
-                    <Form.Control as="textarea" rows="5" name="comment" value={formValues.comment} onChange={changeHandler} />
+                    <Form.Control as="textarea" rows="10" maxLength="500" name="comment" value={formValues.comment} onChange={changeHandler} />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">

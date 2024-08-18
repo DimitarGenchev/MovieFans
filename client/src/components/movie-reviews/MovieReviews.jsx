@@ -30,7 +30,7 @@ export default function MovieReviews({
                                     <Dropdown className="ms-auto">
                                         <Dropdown.Toggle variant="secondary" />
 
-                                        <Dropdown.Menu>
+                                        <Dropdown.Menu style={{ '--bs-dropdown-link-hover-bg': '#d4d4d4' }}>
                                             <Dropdown.Item href={`/reviews/${review._id}/edit`}>Edit</Dropdown.Item>
                                             <Dropdown.Item onClick={() => setDeleteReviewId(review._id)}>Delete</Dropdown.Item>
                                         </Dropdown.Menu>

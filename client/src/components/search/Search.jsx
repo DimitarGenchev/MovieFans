@@ -11,7 +11,7 @@ const initialValues = {
     search: '',
     criteria: '',
     sort: '',
-    pageSize: '5',
+    pageSize: '6',
 };
 
 export default function Search({
@@ -29,7 +29,7 @@ export default function Search({
                 search: '',
                 criteria: '',
                 sort: '',
-                pageSize: 5,
+                pageSize: 6,
                 offset: 0,
             });
 
@@ -64,9 +64,9 @@ export default function Search({
 
                 <FloatingLabel label="Page size">
                     <Form.Select name="pageSize" value={formValues.pageSize} onChange={changeHandler}>
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
+                        <option value="6">6</option>
+                        <option value="12">12</option>
+                        <option value="18">18</option>
                     </Form.Select>
                 </FloatingLabel>
 
